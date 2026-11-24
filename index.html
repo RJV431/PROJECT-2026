@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SORA — Tea Table Booking &amp; Records</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="eyebrow">Quiet Tea Room</div>
+      <h1>Reserve a <em>sunlit</em> corner.</h1>
+      <p class="sub">Pick a spot, choose a time, and manage your table bookings below.</p>
+    </header>
+
+    <form id="bookingForm" class="panel" novalidate>
+      <div id="editBanner" class="edit-banner">
+        <span id="editBannerText">Editing booking</span>
+        <button id="cancelEditBtn" class="cancel-edit-btn" type="button">Cancel Edit</button>
+      </div>
+
+      <div class="section">
+        <span class="label">1. Select Spot</span>
+        <div id="spots" class="spots"></div>
+      </div>
+
+      <div class="section row-2">
+        <div>
+          <label class="label" for="dateInput">2. Date</label>
+          <input id="dateInput" type="date" required />
+        </div>
+        <div>
+          <label class="label" for="guestsInput">Guests</label>
+          <select id="guestsInput">
+            <option value="1">1 Guest</option>
+            <option value="2" selected>2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="label">3. Time Window</span>
+        <div id="slots" class="slots"></div>
+      </div>
+
+      <div class="section row-2">
+        <div>
+          <label class="label" for="nameInput">Your Name</label>
+          <input id="nameInput" type="text" placeholder="Maya Lin" required />
+        </div>
+        <div>
+          <label class="label" for="emailInput">Email</label>
+          <input id="emailInput" type="email" placeholder="maya@example.com" required />
+        </div>
+      </div>
+
+      <button id="submitBtn" class="btn" type="submit">Confirm Table</button>
+      <div id="msg" class="msg" role="alert"></div>
+    </form>
+
+    <!-- Booking Records Panel -->
+    <section class="panel records-panel" aria-label="Booking records">
+      <div class="records-head">
+        <h2 class="records-title">Booking Records</h2>
+        <span id="recordCount" class="count-badge">0 Saved</span>
+      </div>
+      <div id="recordList" class="record-list"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
